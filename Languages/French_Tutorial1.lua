@@ -342,54 +342,54 @@ function tutorial.createTutBoxes()
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "What you need to know is two things:\n1. 'passengers' is a list of all passengers.\nTo access individual passengers, use passengers[1], passengers[2], passengers[3] etc.\n2. If the function ai.foundPassengers returns one of these passengers using the 'return' statement, then the game knows that you want to pick up this passenger and will do it for you, if possible."
+	tutorialSteps[k].message = "Vous devez savoir deux choses\n1. 'passengers' est une liste de tous les passagers.\nPour accéder à des passagers individuels, utilisez passengers[1], passengers[2], passengers[3] etc.\n2. Si la fonction ai.foundPassengers retourne un de ces passagers à l'aide de la déclaration 'return', alors le jeu sait que vous voulez prendre ce passager et le fera pour vous, si possible."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].event = pickUpPassengerStep1
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
-	tutorialSteps[k].buttons[2] = {name = "More Info", event = additionalInformation("This means that the passenger will ONLY be picked up if the train does not currently hold another passenger."), inBetweenSteps = true}
+	tutorialSteps[k].buttons[2] = {name = "Plus d'informations", event = additionalInformation("Cela signifie que le passager sera SEULEMENT ramassé si le train ne détient pas actuellement un autre passager."), inBetweenSteps = true}
 	tutorialSteps[k].buttons[3] = {name = "Suivant", event = nextTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "Since we only have one passenger right now, there can only be one passenger in the list, who will be represented by passengers[1] (if there was a second passenger on the tile, that passenger would be passengers[2]). So, if we return this passengers[1], GLaDOS will be picked up.\nAdd the new line of code inside the function we just defined, as shown in the code box.\nOnce done, click Reload and watch your train pick up GLaDOS!"
+	tutorialSteps[k].message = "Puisque nous avons un seul passager à l'heure actuelle, il ne peut y avoir un passager dans la liste, qui sera représenté par passengers[1] (S'il y avait un deuxième passager sur le carreau, ce passager serait passengers[2]). Donc, si nous retournons passengers[1], GLaDOS sera ramassé.\nAjouter la nouvelle ligne de code dans la fonction que nous venons de définir, comme indiqué dans la zone de code.\nUne fois fait, cliquez sur Rechargez et regardez votre train ramasser GLaDOS!"
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].event = pickUpPassengerStep2(k)
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "You successfully picked up GLaDOS!\nNote that the train's image changed to show that it now holds a passenger.\n\nWe're almost done, now we just need to place her down near the pie-store."
+	tutorialSteps[k].message = "Vous avez ramassé avec succès GLaDOS !\nNotez que l'image du train a changé pour montrer qu'il détient maintenant un passager.\n\nNous avons presque terminé, maintenant nous avons juste besoin de la placer vers le bas près du magasin de tartes.."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	tutorialSteps[k].buttons[2] = {name = "Suivant", event = nextTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].stepTitle = "Drop 'er off!"
-	tutorialSteps[k].message = "You can drop off your passenger at any time by calling the function dropPassenger(train) somewhere in your code. To make things easier for you, whenever a train arrives at the square which the current passenger wants to go to, the function ai.foundDestination() in your code will be called, if you have written it.\nLet's do that!"
+	tutorialSteps[k].stepTitle = "Déposez la !"
+	tutorialSteps[k].message = "Vous pouvez déposez votre passager à tout moment en appelant la fonction dropPassenger(train) quelque part dans votre code. Pour rendre les choses plus facile pour vous, chaque fois qu'un train arrive à la place du passager actuel veut aller à une destination, nous utiliserons la fonction ai.foundDestination() dans votre code, si vous l'avez écrit. \nFaisons ça !"
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	tutorialSteps[k].buttons[2] = {name = "Suivant", event = nextTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "Add the function shown in the code box to the bottom of your TutorialAI1.lua.\nThen reload the code again and wait until the train has picked up GLaDOS and reached the pie store."
+	tutorialSteps[k].message = "Ajouter la fonction affichée dans la zone de code en bas de votre TutorialAI1.lua.\nRechargez ensuite à nouveau le code et attendre jusqu'à ce que le train ramasse GLaDOS et atteignent le magasin de tartes."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].event = dropOffPassengerEvent(k)
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].stepTitle = "Done!"
-	tutorialSteps[k].message = "You've completed the first tutorial, well done!\n\nClick 'More Ideas' for some ideas of what you can try on your own before going to the next tutorial."
+	tutorialSteps[k].stepTitle = "Terminé !"
+	tutorialSteps[k].message = "Vous avez terminé le premier tutoriel, bien joué !\n\nCliquez sur 'Plus d'idées' pour avoir quelques idées de ce que vous pouvez faire avant d'entamez le prochain tutoriel."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
-	tutorialSteps[k].buttons[2] = {name = "More Ideas", event = additionalInformation("1. Try to print something to the console using the print function when the train picks up the passenger and when it drops her off (for example: 'Welcome!' and 'Good bye').\n2. Buy two trains instead of one, by calling buyTrain twice in ai.init()\n3. Make the train start on the bottom right instead of the top left."), inBetweenSteps = true}
+	tutorialSteps[k].buttons[2] = {name = "Plus d'idées", event = additionalInformation("1. Essayez d'imprimer quelque chose à la console en utilisant la fonction d'impression lorsque le train prend le passager et quand il la dépose (par exemple: 'Bienvenue !' Et 'Au revoir !').\n2. Acheter deux trains au lieu d'un, en appelant buyTrain deux fois dans ai.init()\n3. Faire démarrage le train en bas à droite au lieu de la partie supérieure gauche."), inBetweenSteps = true}
 	tutorialSteps[k].buttons[3] = {name = "Suivant", event = nextTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "Go directly to the next tutorial or return to the menu."
+	tutorialSteps[k].message = "Aller directement au tutoriel suivant ou revenir au menu."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	tutorialSteps[k].buttons[2] = {name = "Quit", event = endTutorial}
