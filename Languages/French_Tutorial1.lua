@@ -439,10 +439,10 @@ end
 function setFirstPrintEvent(k)
 	tutorial.consoleEvent = function (str)
 					if str:sub(1, 13) == "[TutorialAI1]" then
-						if str:upper() == string.upper("[TutorialAI1]\tHello trAIns!") then
-							tutorialSteps[k+1].message = "Well done.\n\nThe text you printed should now show up in the in-game console on the left. The console also shows which AI printed the text, in this case, TutorialAI1. This will play a role when you challenge other AIs later on.\n\n(If you can't see the text, move this info-window by clicking on it and dragging it somewhere else.)"
+						if str:upper() == string.upper("[TutorialAI1]\tBonjour trAIns!") then
+							tutorialSteps[k+1].message = "Bien joué.\n\nLe texte que vous avez imprimée devrait maintenant apparaître dans la console dans le jeu sur la gauche. La console montre aussi que l'IA imprimé le texte, dans ce cas, TutorialAI1. Cela jouera un rôle lorsque vous défirez d'autres IA plus tard.\n\n(Si vous ne pouvez pas voir le texte, déplacez cette info-fenêtre en cliquant dessus et en le faisant glisser quelque part ailleurs.)"
 						else
-							tutorialSteps[k+1].message = "Not quite the right text, but you get the idea.\n\nThe text you printed should now show up in the in-game console on the left. The console also shows which AI printed the text, in this case, TutorialAI1. This will play a role when you challenge other AIs later on.\n\n(If you can't see the text, move this info-window by clicking on it and dragging it somewhere else.)"
+							tutorialSteps[k+1].message = "Pas tout à fait le bon texte, mais vous voyez l'idée.\n\nLe texte que vous avez imprimée devrait maintenant apparaître dans la console dans le jeu sur la gauche. La console montre aussi que l'IA imprimé le texte, dans ce cas, TutorialAI1. Cela jouera un rôle lorsque vous défirez d'autres IA plus tard.\n\n(Si vous ne pouvez pas voir le texte, déplacez cette info-fenêtre en cliquant dessus et en le faisant glisser quelque part ailleurs.)"
 						end
 						tutorial.consoleEvent = nil
 						if currentStep == k then
@@ -475,12 +475,12 @@ end
 function setPassengerStart(k)
 	return function()
 		if not tutorial.placedFirstPassenger then
-			passenger.new(5,4, 1,3, "There will be a cake at the end. And a party. No, really.") 	-- place passenger at 3, 4 wanting to go to 1,3
+			passenger.new(5,4, 1,3, "Il y aura un gâteau à la fin. Et une fête. Pas vraiment !") 	-- place passenger at 3, 4 wanting to go to 1,3
 			tutorial.placedFirstPassenger = true
 			tutorial.restartEvent = function()
 				print(currentStep, k)
 					if currentStep >= k then	-- if I haven't gone back to a previous step
-						passenger.new(5,4, 1,3, "There will be a cake at the end. And a party. No, really.") 	-- place passenger at 3, 4 wanting to go to 1,3
+						passenger.new(5,4, 1,3, "Il y aura un gâteau à la fin. Et une fête. Pas vraiment !") 	-- place passenger at 3, 4 wanting to go to 1,3
 						tutorial.placedFirstPassenger = true
 					end
 				end
@@ -517,7 +517,7 @@ function dropOffPassengerEvent(k)
 			end
 			tutorial.passengerDropoffWronglyEvent = function()		-- called when the passenger is dropped off elsewhere
 				if currentTutBox then
-					currentTutBox.text = "You dropped off the passenger at a wrong place!\n\nAdd the function shown in the code box to the bottom of your TutorialAI1.lua"
+					currentTutBox.text = "Vous avez dépossez le passager à un mauvais endroit !\n\nAjouter la fonction affichée dans la zone de code en bas de votre Tutorial.lua"
 				end
 			end
 		end
@@ -529,7 +529,7 @@ function tutorial.roundStats()
 	y = 20
 	love.graphics.draw(roundStats, x, y)
 	
-	love.graphics.print("Tutorial 1: Baby Steps", x + roundStats:getWidth()/2 - FONT_STAT_MSGBOX:getWidth("Tutorial 1: Baby Steps")/2, y+10)
+	love.graphics.print("Tutoriel 1: Mes premiers pas !", x + roundStats:getWidth()/2 - FONT_STAT_MSGBOX:getWidth("Tutoriel 1: Mes premiers pas !")/2, y+10)
 	love.graphics.print(currentStepTitle, x + roundStats:getWidth()/2 - FONT_STAT_MSGBOX:getWidth(currentStepTitle)/2, y+30)
 end
 
@@ -544,13 +544,13 @@ function tutorial.handleEvents(dt)
 end
 
 fileContent = [[
--- Tutorial 1: Baby Steps
--- What you should know:
---	a) Lines starting with two dashes (minus signs) are comments, they will be ignored by the game.
---	b) All your instructions will be written in the Lua scripting language.
---	c) The basics of Lua are very easy to learn, and this game will teach them to you step by step.
---	d) Lua is extremly fast as well. In short:
---	e) Lua doesn't suck.
--- Now that you've successfully found the file and read this, go back to the game and press the "Next" button!
--- Note: There are text editors which highlight the keywords for the Lua language. Just search for Lua editors on the internet. This makes scripting easier but is NOT needed - any old text editor should do.
+-- Tutoriel 1: Mes premiers pas !
+-- Ce que vous devriez savoir:
+--	a) Les lignes commençant par deux tirets (signe moins) sont des commentaires, ils seront ignorés par le jeu.
+--	b) Toutes vos instructions seront écrites dans le langage de script Lua.
+--	c) Les bases de Lua sont très faciles à apprendre, et ce jeu est fait pour vous les apprendres étape par étape.
+--	d) Lua est extrêmement rapide ainsi. En bref:
+--	e) Lua n'est pas nul.
+-- Maintenant que vous avez trouvé le fichier et lire ceci, revenir au jeu et appuyez sur le bouton "Suivant" avec succès !
+-- Remarque: Il existe des éditeurs de texte qui mettent en évidence les mots-clés pour la language Lua. Il suffit de chercher les éditeurs Lua sur Internet. Cela rend plus facile à scripter mais ne sont pas nécessaires - Tout ancien éditeur de texte devrait fonctionner.
 ]]
