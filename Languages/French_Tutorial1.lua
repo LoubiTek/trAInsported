@@ -342,54 +342,54 @@ function tutorial.createTutBoxes()
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "What you need to know is two things:\n1. 'passengers' is a list of all passengers.\nTo access individual passengers, use passengers[1], passengers[2], passengers[3] etc.\n2. If the function ai.foundPassengers returns one of these passengers using the 'return' statement, then the game knows that you want to pick up this passenger and will do it for you, if possible."
+	tutorialSteps[k].message = "Vous devez savoir deux choses\n1. 'passengers' est une liste de tous les passagers.\nPour accéder à des passagers individuels, utilisez passengers[1], passengers[2], passengers[3] etc.\n2. Si la fonction ai.foundPassengers retourne un de ces passagers à l'aide de la déclaration 'return', alors le jeu sait que vous voulez prendre ce passager et le fera pour vous, si possible."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].event = pickUpPassengerStep1
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
-	tutorialSteps[k].buttons[2] = {name = "More Info", event = additionalInformation("This means that the passenger will ONLY be picked up if the train does not currently hold another passenger."), inBetweenSteps = true}
+	tutorialSteps[k].buttons[2] = {name = "Plus d'informations", event = additionalInformation("Cela signifie que le passager sera SEULEMENT ramassé si le train ne détient pas actuellement un autre passager."), inBetweenSteps = true}
 	tutorialSteps[k].buttons[3] = {name = "Suivant", event = nextTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "Since we only have one passenger right now, there can only be one passenger in the list, who will be represented by passengers[1] (if there was a second passenger on the tile, that passenger would be passengers[2]). So, if we return this passengers[1], GLaDOS will be picked up.\nAdd the new line of code inside the function we just defined, as shown in the code box.\nOnce done, click Reload and watch your train pick up GLaDOS!"
+	tutorialSteps[k].message = "Puisque nous avons un seul passager à l'heure actuelle, il ne peut y avoir un passager dans la liste, qui sera représenté par passengers[1] (S'il y avait un deuxième passager sur le carreau, ce passager serait passengers[2]). Donc, si nous retournons passengers[1], GLaDOS sera ramassé.\nAjouter la nouvelle ligne de code dans la fonction que nous venons de définir, comme indiqué dans la zone de code.\nUne fois fait, cliquez sur Rechargez et regardez votre train ramasser GLaDOS!"
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].event = pickUpPassengerStep2(k)
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "You successfully picked up GLaDOS!\nNote that the train's image changed to show that it now holds a passenger.\n\nWe're almost done, now we just need to place her down near the pie-store."
+	tutorialSteps[k].message = "Vous avez ramassé avec succès GLaDOS !\nNotez que l'image du train a changé pour montrer qu'il détient maintenant un passager.\n\nNous avons presque terminé, maintenant nous avons juste besoin de la placer vers le bas près du magasin de tartes.."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	tutorialSteps[k].buttons[2] = {name = "Suivant", event = nextTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].stepTitle = "Drop 'er off!"
-	tutorialSteps[k].message = "You can drop off your passenger at any time by calling the function dropPassenger(train) somewhere in your code. To make things easier for you, whenever a train arrives at the square which the current passenger wants to go to, the function ai.foundDestination() in your code will be called, if you have written it.\nLet's do that!"
+	tutorialSteps[k].stepTitle = "Déposez la !"
+	tutorialSteps[k].message = "Vous pouvez déposez votre passager à tout moment en appelant la fonction dropPassenger(train) quelque part dans votre code. Pour rendre les choses plus facile pour vous, chaque fois qu'un train arrive à la place du passager actuel veut aller à une destination, nous utiliserons la fonction ai.foundDestination() dans votre code, si vous l'avez écrit. \nFaisons ça !"
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	tutorialSteps[k].buttons[2] = {name = "Suivant", event = nextTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "Add the function shown in the code box to the bottom of your TutorialAI1.lua.\nThen reload the code again and wait until the train has picked up GLaDOS and reached the pie store."
+	tutorialSteps[k].message = "Ajouter la fonction affichée dans la zone de code en bas de votre TutorialAI1.lua.\nRechargez ensuite à nouveau le code et attendre jusqu'à ce que le train ramasse GLaDOS et atteignent le magasin de tartes."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].event = dropOffPassengerEvent(k)
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].stepTitle = "Done!"
-	tutorialSteps[k].message = "You've completed the first tutorial, well done!\n\nClick 'More Ideas' for some ideas of what you can try on your own before going to the next tutorial."
+	tutorialSteps[k].stepTitle = "Terminé !"
+	tutorialSteps[k].message = "Vous avez terminé le premier tutoriel, bien joué !\n\nCliquez sur 'Plus d'idées' pour avoir quelques idées de ce que vous pouvez faire avant d'entamez le prochain tutoriel."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
-	tutorialSteps[k].buttons[2] = {name = "More Ideas", event = additionalInformation("1. Try to print something to the console using the print function when the train picks up the passenger and when it drops her off (for example: 'Welcome!' and 'Good bye').\n2. Buy two trains instead of one, by calling buyTrain twice in ai.init()\n3. Make the train start on the bottom right instead of the top left."), inBetweenSteps = true}
+	tutorialSteps[k].buttons[2] = {name = "Plus d'idées", event = additionalInformation("1. Essayez d'imprimer quelque chose à la console en utilisant la fonction d'impression lorsque le train prend le passager et quand il la dépose (par exemple: 'Bienvenue !' Et 'Au revoir !').\n2. Acheter deux trains au lieu d'un, en appelant buyTrain deux fois dans ai.init()\n3. Faire démarrage le train en bas à droite au lieu de la partie supérieure gauche."), inBetweenSteps = true}
 	tutorialSteps[k].buttons[3] = {name = "Suivant", event = nextTutorialStep}
 	k = k + 1
 	
 	tutorialSteps[k] = {}
-	tutorialSteps[k].message = "Go directly to the next tutorial or return to the menu."
+	tutorialSteps[k].message = "Aller directement au tutoriel suivant ou revenir au menu."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Retour", event = prevTutorialStep}
 	tutorialSteps[k].buttons[2] = {name = "Quit", event = endTutorial}
@@ -439,10 +439,10 @@ end
 function setFirstPrintEvent(k)
 	tutorial.consoleEvent = function (str)
 					if str:sub(1, 13) == "[TutorialAI1]" then
-						if str:upper() == string.upper("[TutorialAI1]\tHello trAIns!") then
-							tutorialSteps[k+1].message = "Well done.\n\nThe text you printed should now show up in the in-game console on the left. The console also shows which AI printed the text, in this case, TutorialAI1. This will play a role when you challenge other AIs later on.\n\n(If you can't see the text, move this info-window by clicking on it and dragging it somewhere else.)"
+						if str:upper() == string.upper("[TutorialAI1]\tBonjour trAIns!") then
+							tutorialSteps[k+1].message = "Bien joué.\n\nLe texte que vous avez imprimée devrait maintenant apparaître dans la console dans le jeu sur la gauche. La console montre aussi que l'IA imprimé le texte, dans ce cas, TutorialAI1. Cela jouera un rôle lorsque vous défirez d'autres IA plus tard.\n\n(Si vous ne pouvez pas voir le texte, déplacez cette info-fenêtre en cliquant dessus et en le faisant glisser quelque part ailleurs.)"
 						else
-							tutorialSteps[k+1].message = "Not quite the right text, but you get the idea.\n\nThe text you printed should now show up in the in-game console on the left. The console also shows which AI printed the text, in this case, TutorialAI1. This will play a role when you challenge other AIs later on.\n\n(If you can't see the text, move this info-window by clicking on it and dragging it somewhere else.)"
+							tutorialSteps[k+1].message = "Pas tout à fait le bon texte, mais vous voyez l'idée.\n\nLe texte que vous avez imprimée devrait maintenant apparaître dans la console dans le jeu sur la gauche. La console montre aussi que l'IA imprimé le texte, dans ce cas, TutorialAI1. Cela jouera un rôle lorsque vous défirez d'autres IA plus tard.\n\n(Si vous ne pouvez pas voir le texte, déplacez cette info-fenêtre en cliquant dessus et en le faisant glisser quelque part ailleurs.)"
 						end
 						tutorial.consoleEvent = nil
 						if currentStep == k then
@@ -475,12 +475,12 @@ end
 function setPassengerStart(k)
 	return function()
 		if not tutorial.placedFirstPassenger then
-			passenger.new(5,4, 1,3, "There will be a cake at the end. And a party. No, really.") 	-- place passenger at 3, 4 wanting to go to 1,3
+			passenger.new(5,4, 1,3, "Il y aura un gâteau à la fin. Et une fête. Pas vraiment !") 	-- place passenger at 3, 4 wanting to go to 1,3
 			tutorial.placedFirstPassenger = true
 			tutorial.restartEvent = function()
 				print(currentStep, k)
 					if currentStep >= k then	-- if I haven't gone back to a previous step
-						passenger.new(5,4, 1,3, "There will be a cake at the end. And a party. No, really.") 	-- place passenger at 3, 4 wanting to go to 1,3
+						passenger.new(5,4, 1,3, "Il y aura un gâteau à la fin. Et une fête. Pas vraiment !") 	-- place passenger at 3, 4 wanting to go to 1,3
 						tutorial.placedFirstPassenger = true
 					end
 				end
@@ -517,7 +517,7 @@ function dropOffPassengerEvent(k)
 			end
 			tutorial.passengerDropoffWronglyEvent = function()		-- called when the passenger is dropped off elsewhere
 				if currentTutBox then
-					currentTutBox.text = "You dropped off the passenger at a wrong place!\n\nAdd the function shown in the code box to the bottom of your TutorialAI1.lua"
+					currentTutBox.text = "Vous avez dépossez le passager à un mauvais endroit !\n\nAjouter la fonction affichée dans la zone de code en bas de votre Tutorial.lua"
 				end
 			end
 		end
@@ -529,7 +529,7 @@ function tutorial.roundStats()
 	y = 20
 	love.graphics.draw(roundStats, x, y)
 	
-	love.graphics.print("Tutorial 1: Baby Steps", x + roundStats:getWidth()/2 - FONT_STAT_MSGBOX:getWidth("Tutorial 1: Baby Steps")/2, y+10)
+	love.graphics.print("Tutoriel 1: Mes premiers pas !", x + roundStats:getWidth()/2 - FONT_STAT_MSGBOX:getWidth("Tutoriel 1: Mes premiers pas !")/2, y+10)
 	love.graphics.print(currentStepTitle, x + roundStats:getWidth()/2 - FONT_STAT_MSGBOX:getWidth(currentStepTitle)/2, y+30)
 end
 
@@ -544,13 +544,13 @@ function tutorial.handleEvents(dt)
 end
 
 fileContent = [[
--- Tutorial 1: Baby Steps
--- What you should know:
---	a) Lines starting with two dashes (minus signs) are comments, they will be ignored by the game.
---	b) All your instructions will be written in the Lua scripting language.
---	c) The basics of Lua are very easy to learn, and this game will teach them to you step by step.
---	d) Lua is extremly fast as well. In short:
---	e) Lua doesn't suck.
--- Now that you've successfully found the file and read this, go back to the game and press the "Next" button!
--- Note: There are text editors which highlight the keywords for the Lua language. Just search for Lua editors on the internet. This makes scripting easier but is NOT needed - any old text editor should do.
+-- Tutoriel 1: Mes premiers pas !
+-- Ce que vous devriez savoir:
+--	a) Les lignes commençant par deux tirets (signe moins) sont des commentaires, ils seront ignorés par le jeu.
+--	b) Toutes vos instructions seront écrites dans le langage de script Lua.
+--	c) Les bases de Lua sont très faciles à apprendre, et ce jeu est fait pour vous les apprendres étape par étape.
+--	d) Lua est extrêmement rapide ainsi. En bref:
+--	e) Lua n'est pas nul.
+-- Maintenant que vous avez trouvé le fichier et lire ceci, revenir au jeu et appuyez sur le bouton "Suivant" avec succès !
+-- Remarque: Il existe des éditeurs de texte qui mettent en évidence les mots-clés pour la language Lua. Il suffit de chercher les éditeurs Lua sur Internet. Cela rend plus facile à scripter mais ne sont pas nécessaires - Tout ancien éditeur de texte devrait fonctionner.
 ]]
